@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Grok Bot delivery team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#171C26;--ink2:#0E1422;--dim:#6B7280;--blue:#2647F5;--purple:#7C3AED;--teal:#12A594;--orange:#F2643C;--canvas:#FBFCFD}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff}
+  body{font-family:Poppins,Avenir Next,Segoe UI,sans-serif;color:var(--ink)}
+  .card{position:relative;width:720px;height:900px;overflow:hidden;background-color:var(--canvas);
+    background-image:linear-gradient(#E7EAEF 1px,transparent 1px),linear-gradient(90deg,#E7EAEF 1px,transparent 1px),linear-gradient(#F3F4F6 1px,transparent 1px),linear-gradient(90deg,#F3F4F6 1px,transparent 1px);
+    background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+  .glow{position:absolute;width:520px;height:520px;border-radius:50%;filter:blur(60px);opacity:.09;pointer-events:none}
+  .g1{background:#F59E0A;left:-180px;top:-200px}.g2{background:#2647F5;right:-200px;top:120px}.g3{background:#7D3BED;left:-160px;bottom:40px}
+  .inner{position:relative;padding:30px 36px 0}
+  .eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .eyebrow img{width:34px;height:34px;border-radius:10px;box-shadow:0 6px 16px rgba(13,18,30,.14)}
+  .chip{display:inline-block;background:rgba(38,71,245,.08);color:var(--blue);font-weight:500;font-size:13px;padding:6px 12px;border-radius:999px}
+  h1{font-size:33px;line-height:1.12;font-weight:600;letter-spacing:-.02em;max-width:660px;white-space:nowrap}
+  h1 .accent{display:inline-block;font-style:italic;font-weight:500;background:rgba(38,71,245,.08);color:var(--blue);padding:0 12px;border-radius:10px;line-height:1.2}
+  .sub{margin-top:8px;font-size:14px;color:#4B5563;max-width:640px;line-height:1.4}
+  .groups{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+  .group{display:flex;gap:12px;align-items:flex-start}
+  .label{width:92px;flex:none;font-size:10px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding-top:12px}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;flex:1}
+  .bot{background:#fff;border-radius:14px;padding:8px 10px 8px 8px;box-shadow:0 8px 22px rgba(13,18,30,.09);display:flex;gap:8px;align-items:flex-start;min-height:52px;transition:opacity .2s}
+  .bot.hide{opacity:0}
+  .mono{width:26px;height:26px;border-radius:8px;flex:none;color:#fff;font-weight:600;font-size:10px;display:flex;align-items:center;justify-content:center;letter-spacing:.02em}
+  .lead .mono{background:linear-gradient(135deg,#7C3AED,#BB35E3)}
+  .coord .mono{background:linear-gradient(135deg,#2454EB,#5C8FFF)}
+  .arch .mono{background:linear-gradient(135deg,#0E9BA8,#12A594)}
+  .cross .mono{background:linear-gradient(135deg,#F2643C,#F59E0A)}
+  .bot b{display:block;font-size:12px;font-weight:600;line-height:1.2}
+  .bot span{display:block;font-size:10px;color:var(--dim);line-height:1.3;margin-top:1px}
+  .bot.opt{border:1px dashed #C9CED8;box-shadow:none;background:rgba(255,255,255,.7)}
+  .bar{position:absolute;left:24px;right:24px;bottom:24px;background:var(--ink2);border-radius:20px;padding:14px 16px 16px;color:#fff;box-shadow:0 24px 60px rgba(13,18,30,.22)}
+  .bar h3{font-size:12.5px;font-weight:500;color:#C7CCD6;margin-bottom:10px}
+  .steps{display:flex;align-items:center;gap:12px}
+  .step{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px 14px}
+  .step .n{display:inline-flex;width:24px;height:24px;border-radius:50%;background:#fff;color:var(--ink2);font-weight:600;font-size:12px;align-items:center;justify-content:center;margin-right:8px;vertical-align:middle}
+  .step .t{font-size:16px;font-weight:600;vertical-align:middle}
+  .who{display:flex;align-items:center;gap:10px;margin-top:10px}
+  .avatar{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#2454EB,#5C8FFF);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex:none;overflow:hidden}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .who b{display:block;font-size:12.5px;font-weight:600}.who span{display:block;font-size:10.5px;color:#9AA1AD}
+  .connect{margin-left:auto;background:#fff;color:var(--ink2);font-weight:600;font-size:12px;padding:7px 12px;border-radius:999px}
+  .arrow{font-size:22px;color:#9AA1AD}
+  .kw{display:inline-block;margin-top:10px;background:linear-gradient(90deg,#7C3AED,#BB35E3);color:#fff;font-weight:600;font-size:20px;letter-spacing:.06em;padding:7px 16px;border-radius:11px}
+  .dm{display:inline-block;margin-left:10px;font-size:11.5px;color:#9AA1AD}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+  <div class="inner">
+    <div class="eyebrow"><img src="puzzle-logo.png" alt=""><span class="chip">Grok Bot team template</span></div>
+    <h1>Steal my Grok Bot delivery <span class="accent">team</span></h1>
+    <p class="sub">13 agents, their roles and rules, wired to Claude Code and a Puzzle workspace per client.</p>
+
+    <div class="groups">
+      <div class="group"><div class="label">Leadership</div><div class="cards">
+        <div class="bot lead" data-i="0"><div class="mono">CS</div><div><b>Chief of Staff</b><span>Runs the team, hands the work to Claude Code</span></div></div>
+        <div class="bot lead" data-i="1"><div class="mono">FM</div><div><b>Foreman</b><span>Builds new Bots and skills when needed</span></div></div>
+      </div></div>
+      <div class="group"><div class="label">Coordination</div><div class="cards">
+        <div class="bot coord" data-i="2"><div class="mono">DL</div><div><b>Delivery Lead</b><span>Scope, calendar, gates, the weekly update</span></div></div>
+        <div class="bot coord" data-i="3"><div class="mono">RW</div><div><b>Recap Writer</b><span>Every call becomes an email and a task list</span></div></div>
+        <div class="bot coord" data-i="4"><div class="mono">TR</div><div><b>Trainer</b><span>Deck, Loom scripts, rollout emails</span></div></div>
+      </div></div>
+      <div class="group"><div class="label">Architecture</div><div class="cards">
+        <div class="bot arch" data-i="5"><div class="mono">CM</div><div><b>Current State Mapper</b><span>Interview guide, the map in Puzzle</span></div></div>
+        <div class="bot arch" data-i="6"><div class="mono">TS</div><div><b>Tech Stack Researcher</b><span>Options, pricing, the vet-and-demo prep</span></div></div>
+        <div class="bot arch" data-i="7"><div class="mono">PC</div><div><b>Product Changes Researcher</b><span>Tool releases mapped to client steps</span></div></div>
+        <div class="bot arch" data-i="8"><div class="mono">PA</div><div><b>Process Architect</b><span>Future state map, AI Opportunity Roadmap</span></div></div>
+        <div class="bot arch" data-i="9"><div class="mono">IA</div><div><b>Impact Analyst</b><span>ROI before, Innovation Report after</span></div></div>
+        <div class="bot arch" data-i="10"><div class="mono">BS</div><div><b>Build Specialist</b><span>Build specs, request tracker, test plans</span></div></div>
+        <div class="bot arch opt" data-i="11"><div class="mono">DC</div><div><b>Data Cleaner</b><span>Optional. Migration review and mapping</span></div></div>
+      </div></div>
+      <div class="group"><div class="label">Cross-cutting</div><div class="cards">
+        <div class="bot cross" data-i="12"><div class="mono">CH</div><div><b>Change Manager</b><span>A changelog entry for every decision</span></div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="bar">
+    <h3>Get the full setup file in 2 steps</h3>
+    <div class="steps">
+      <div class="step">
+        <span class="n">1</span><span class="t">Connect with me</span>
+        <div class="who"><div class="avatar" id="avatar">BR</div><div><b>Brian Ragone</b><span>Founder, Puzzle</span></div><span class="connect">+ Connect</span></div>
+      </div>
+      <div class="arrow">→</div>
+      <div class="step">
+        <span class="n">2</span><span class="t">Comment</span>
+        <div><span class="kw">OPSBOT</span><span class="dm">I'll DM you the file</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // ?frame=N shows the first N bots (for the GIF); no param shows all.
+  const p = new URLSearchParams(location.search);
+  if (p.has('frame')) {
+    const n = parseInt(p.get('frame'), 10);
+    document.querySelectorAll('.bot').forEach(el => { if (parseInt(el.dataset.i,10) >= n) el.classList.add('hide'); });
+    document.querySelectorAll('.group').forEach(g => { if (![...g.querySelectorAll('.bot')].some(el => !el.classList.contains('hide'))) g.querySelector('.label').style.opacity = '0'; });
+    if (p.get('bar') === '0') document.querySelector('.bar').style.opacity = '0';
+  }
+  if (p.has('avatar')) { document.getElementById('avatar').innerHTML = '<img src="' + p.get('avatar') + '" alt="">'; }
+</script>
+</body>
+</html>

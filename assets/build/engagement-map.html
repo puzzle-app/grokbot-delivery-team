@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Engagement map</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#171C26;--dim:#6B7280;--line:#C9CED8;--canvas:#FBFCFD;--blue:#2647F5}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Poppins,Avenir Next,Segoe UI,sans-serif;color:var(--ink);background:#fff}
+  .stage{position:relative;width:1600px;height:720px;overflow:hidden;background-color:var(--canvas);
+    background-image:linear-gradient(#E7EAEF 1px,transparent 1px),linear-gradient(90deg,#E7EAEF 1px,transparent 1px),linear-gradient(#F3F4F6 1px,transparent 1px),linear-gradient(90deg,#F3F4F6 1px,transparent 1px);
+    background-size:100px 100px,100px 100px,20px 20px,20px 20px;padding:36px 48px}
+  .glow{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(70px);opacity:.08;pointer-events:none}
+  .g1{background:#F59E0A;left:-240px;top:-240px}.g2{background:#2647F5;right:-240px;top:200px}.g3{background:#7D3BED;left:300px;bottom:-300px}
+  .head{position:relative;display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .head img{width:36px;height:36px;border-radius:10px;box-shadow:0 6px 16px rgba(13,18,30,.14)}
+  .head h2{font-size:22px;font-weight:600}
+  .head span{font-size:12.5px;color:var(--dim)}
+  .grid{position:relative;display:grid;grid-template-columns:150px repeat(8,1fr);gap:10px;align-items:stretch}
+  .rowlabel{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding-top:12px}
+  .phase{background:#fff;border-radius:16px;padding:12px 12px 10px;box-shadow:0 10px 26px rgba(13,18,30,.09);position:relative}
+  .phase .wk{font-size:10px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+  .phase b{display:block;font-size:13px;font-weight:600;line-height:1.2;margin-top:3px;min-height:32px}
+  .phase.p1{border-top:4px solid #F5B301}.phase.p2{border-top:4px solid #F2643C}.phase.p3{border-top:4px solid #2454EB}.phase.p4{border-top:4px solid #12A594}.phase.p5{border-top:4px solid #7C3AED}.phase.p6{border-top:4px solid #E246C8}.phase.p7{border-top:4px solid #2454EB}.phase.p8{border-top:4px solid #12A594}
+  .cell{border-radius:14px;padding:10px;min-height:150px;background:rgba(255,255,255,.55);border:1px solid rgba(201,206,216,.6)}
+  .cell.human{min-height:92px;background:rgba(23,28,38,.04)}
+  .bot{display:block;font-size:11px;font-weight:500;line-height:1.25;padding:6px 8px;border-radius:9px;margin-bottom:6px;color:#fff}
+  .coord{background:linear-gradient(135deg,#2454EB,#5C8FFF)}.arch{background:linear-gradient(135deg,#0E9BA8,#12A594)}.cross{background:linear-gradient(135deg,#F2643C,#F59E0A)}.lead{background:linear-gradient(135deg,#7C3AED,#BB35E3)}
+  .bot.opt{background:#fff;color:var(--ink);border:1px dashed var(--line)}
+  .hum{font-size:11px;line-height:1.35;color:#2B3240}
+  .hum b{font-weight:600}
+  .gate{position:absolute;top:-14px;right:-18px;background:#171C26;color:#fff;font-size:10px;font-weight:600;padding:5px 9px;border-radius:999px;box-shadow:0 8px 18px rgba(13,18,30,.2);white-space:nowrap;z-index:2}
+  .window{position:relative;margin-top:14px;display:grid;grid-template-columns:150px repeat(8,1fr);gap:10px;align-items:center}
+  .window .bar{grid-column:2 / span 6;height:26px;border-radius:999px;background:rgba(38,71,245,.10);border:1px solid rgba(38,71,245,.25);display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:11px;color:var(--blue);font-weight:500}
+  .window .after{grid-column:8 / span 2;font-size:11px;color:var(--dim);padding-left:6px}
+  .foot{position:absolute;left:48px;right:48px;bottom:28px;display:flex;justify-content:space-between;align-items:center;font-size:11.5px;color:var(--dim)}
+  .foot .mem{display:flex;gap:16px}
+  .foot i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+  .foot .pz{display:flex;align-items:center;gap:8px;color:#2B3240;font-weight:500}
+  .foot .pz img{width:22px;height:22px;border-radius:6px}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
+  <div class="head"><img src="puzzle-logo.png" alt=""><div><h2>The engagement, and who works each phase</h2><span>Seven phases, two sign-off gates, one request window. A Bot prepares every phase; a human runs the room.</span></div></div>
+
+  <div class="grid">
+    <div class="rowlabel">Phase</div>
+    <div class="phase p1"><div class="wk">Week 0</div><b>Onboarding</b></div>
+    <div class="phase p2"><div class="wk">Weeks 1 to 2</div><b>Current State Discovery</b></div>
+    <div class="phase p3"><div class="wk">Week 3</div><b>Propose Future State</b><div class="gate">Gate 1 · client signs off</div></div>
+    <div class="phase p4"><div class="wk">Weeks 4 to 5</div><b>Build Future State</b></div>
+    <div class="phase p5"><div class="wk">Weeks 6 to 7</div><b>Test and Iterate</b></div>
+    <div class="phase p6"><div class="wk">Week 8</div><b>Future State Demo</b><div class="gate">Gate 2 · window closes</div></div>
+    <div class="phase p7"><div class="wk">Week 9</div><b>Training</b></div>
+    <div class="phase p8"><div class="wk">Week 10 +</div><b>Roll Out and Support</b></div>
+
+    <div class="rowlabel">Bots prepare</div>
+    <div class="cell"><span class="bot coord">Delivery Lead</span><span class="bot coord">Recap Writer</span></div>
+    <div class="cell"><span class="bot coord">Recap Writer</span><span class="bot arch">Current State Mapper</span><span class="bot coord">Delivery Lead</span></div>
+    <div class="cell"><span class="bot arch">Tech Stack Researcher</span><span class="bot arch">Process Architect</span><span class="bot arch">Impact Analyst</span><span class="bot coord">Recap Writer</span></div>
+    <div class="cell"><span class="bot arch">Build Specialist</span><span class="bot cross">Change Manager</span></div>
+    <div class="cell"><span class="bot coord">Recap Writer</span><span class="bot arch">Build Specialist</span><span class="bot cross">Change Manager</span></div>
+    <div class="cell"><span class="bot coord">Recap Writer</span><span class="bot arch">Impact Analyst</span><span class="bot arch opt">Data Cleaner (optional)</span></div>
+    <div class="cell"><span class="bot coord">Trainer</span><span class="bot coord">Recap Writer</span></div>
+    <div class="cell"><span class="bot coord">Trainer</span><span class="bot cross">Change Manager</span><span class="bot arch">Product Changes Researcher</span></div>
+
+    <div class="rowlabel">The human runs</div>
+    <div class="cell human"><div class="hum"><b>Hosts the kickoff.</b> Sends the survey.</div></div>
+    <div class="cell human"><div class="hum"><b>Hosts the mapping calls.</b> Audits the systems.</div></div>
+    <div class="cell human"><div class="hum"><b>Vets and demos the tools.</b> Hosts the call.</div></div>
+    <div class="cell human"><div class="hum"><b>Configures the systems.</b> No client meetings.</div></div>
+    <div class="cell human"><div class="hum"><b>Hosts the feedback calls.</b> Finalizes the builds.</div></div>
+    <div class="cell human"><div class="hum"><b>Hosts the demo.</b> Imports the data.</div></div>
+    <div class="cell human"><div class="hum"><b>Presents and records</b> the trainings.</div></div>
+    <div class="cell human"><div class="hum"><b>Hosts office hours</b> and the 45-day check-in.</div></div>
+  </div>
+
+  <div class="window">
+    <div class="rowlabel">Request window</div>
+    <div class="bar"><span>Opens at kickoff</span><span>Closes at the demo</span></div>
+    <div class="after">After the window: logged by the Change Manager, decided by you</div>
+  </div>
+
+  <div class="foot">
+    <div class="mem"><span><i style="background:#7C3AED"></i>Leadership</span><span><i style="background:#2454EB"></i>Coordination</span><span><i style="background:#12A594"></i>Architecture</span><span><i style="background:#F2643C"></i>Cross-cutting</span><span>Every call becomes a recap email and a changelog entry.</span></div>
+    <div class="pz"><img src="puzzle-logo.png" alt="">Runs on a Puzzle workspace per client</div>
+  </div>
+</div>
+</body>
+</html>

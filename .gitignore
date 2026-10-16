@@ -1,0 +1,22 @@
+# Your populated context never goes in a public commit
+context/consultant.md
+context/clients/*
+!context/clients/README.md
+
+# Local connection ids, tokens, transcripts, client exports
+.env
+.env.*
+*.local.md
+transcripts/
+exports/
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Graphics build intermediates (the HTML sources in assets/build/ are committed)
+assets/build/frames/
+assets/build/smoke.*
+assets/build/avatar.png
