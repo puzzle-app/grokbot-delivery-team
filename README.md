@@ -1,6 +1,6 @@
 # Grok Bot delivery team
 
-**13 Grok Bot agents that run a process consultancy's delivery. The client's Puzzle map is the shared memory. Claude Code does the work.**
+**13 Grok Bot agents to run a process consultancy. The client's Puzzle map is the shared memory. Claude Code does the work.**
 
 [![The Grok Bot delivery team](assets/grokbot-delivery-team.gif)](assets/grokbot-delivery-team@2x.png)
 
