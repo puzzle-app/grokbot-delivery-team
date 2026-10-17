@@ -7,11 +7,11 @@ A Grok Bot can create other Bots, group chats and routines from its chat. This p
 3. Answer its questions. It creates the rest and tells you what it couldn't do.
 
 ```text
-Set up my Grok Bot delivery team from github.com/puzzleapp/grokbot-delivery-team.
+Set up my Grok Bot delivery team from github.com/puzzle-app/grokbot-delivery-team.
 
 1. Read README.md, guides/rules.md and every file in agents/ and context/.
    The raw files are at
-   https://raw.githubusercontent.com/puzzleapp/grokbot-delivery-team/main/<path>
+   https://raw.githubusercontent.com/puzzle-app/grokbot-delivery-team/main/<path>
 2. Ask me these 8 questions in 1 message, then wait for my answers:
    - Who I am: my name, my firm, and whether I work solo or split the
      work (one person hosts calls and builds, another writes to the client)
