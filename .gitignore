@@ -18,5 +18,6 @@ Thumbs.db
 
 # Graphics build intermediates (the HTML sources in assets/build/ are committed)
 assets/build/frames/
+assets/build/frames-dark/
 assets/build/smoke.*
 assets/build/avatar.png

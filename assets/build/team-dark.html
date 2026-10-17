@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Grok Bot delivery team, LinkedIn</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#070D1C;--panel:rgba(13,24,52,.82);--edge:rgba(96,140,255,.34);--glow:rgba(43,123,255,.22);--txt:#F3F6FC;--dim:#9AA8C2;--mono:#7FA6FF;--b1:#2B7BFF;--b2:#4CC2FF}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#000}
+  .stage{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--bg);font-family:Poppins,Avenir Next,Segoe UI,sans-serif;color:var(--txt);
+    background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:40px 40px}
+  .glow{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+  .g1{width:700px;height:700px;background:#1B45D7;opacity:.28;right:-260px;top:-240px}
+  .g2{width:600px;height:600px;background:#0763DF;opacity:.18;left:-240px;bottom:-200px}
+  .corner{position:absolute;width:18px;height:18px;color:rgba(255,255,255,.4);font-size:22px;line-height:18px;font-weight:300}
+  .c1{left:22px;top:18px}.c2{right:22px;top:18px}.c3{left:22px;bottom:18px}.c4{right:22px;bottom:18px}
+  .inner{position:relative;padding:54px 64px 0}
+  .mono{font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(127,166,255,.45);border-radius:999px;padding:8px 16px;font-size:12px;color:#CFE0FF}
+  .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--b2);box-shadow:0 0 10px var(--b2)}
+  h1{margin-top:26px;font-size:50px;line-height:1.12;font-weight:700;letter-spacing:-.02em;max-width:940px}
+  h1 .accent{background:linear-gradient(90deg,var(--b1),var(--b2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sub{margin-top:16px;font-size:19px;line-height:1.45;color:var(--dim);max-width:900px}
+  .lanes{margin-top:34px;display:flex;flex-direction:column;gap:18px}
+  .lane{position:relative}
+  .lane .lbl{display:flex;align-items:center;gap:12px;font-size:12px;color:#DCE6FF;margin-bottom:10px;transition:opacity .2s}
+  .lane .lbl b{color:var(--mono);font-weight:500}
+  .lane .lbl:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(127,166,255,.5),rgba(127,166,255,0))}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .bot{position:relative;background:var(--panel);border:1px solid var(--edge);border-radius:14px;padding:12px 14px 12px 12px;display:flex;gap:11px;align-items:flex-start;min-height:76px;
+    box-shadow:0 0 0 1px rgba(255,255,255,.02) inset,0 0 28px var(--glow);transition:opacity .2s}
+  .bot:before{content:"";position:absolute;left:12px;right:12px;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(160,200,255,.6),transparent)}
+  .bot.hide{opacity:0}
+  .tile{width:34px;height:34px;border-radius:9px;flex:none;color:#fff;font-weight:600;font-size:11.5px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 16px rgba(76,194,255,.35)}
+  .lead .tile{background:linear-gradient(135deg,#7C3AED,#BB35E3)}.coord .tile{background:linear-gradient(135deg,#2454EB,#5C8FFF)}.arch .tile{background:linear-gradient(135deg,#0E9BA8,#12A594)}.cross .tile{background:linear-gradient(135deg,#F2643C,#F59E0A)}
+  .bot b{display:block;font-size:14.5px;font-weight:600;line-height:1.2;color:#fff}
+  .bot span{display:block;font-size:11.5px;color:var(--dim);line-height:1.3;margin-top:3px}
+  .bot.opt{border-style:dashed;box-shadow:none;background:rgba(13,24,52,.5)}
+  .bar{position:absolute;left:64px;right:64px;top:1096px;background:rgba(13,24,52,.92);border:1px solid rgba(127,166,255,.5);border-radius:18px;padding:16px 20px 18px;box-shadow:0 0 40px rgba(43,123,255,.28);transition:opacity .2s}
+  .bar.hide{opacity:0}
+  .bar h3{font-size:13px;color:#CFE0FF;font-weight:500;margin-bottom:10px}
+  .steps{display:flex;align-items:center;gap:14px}
+  .step{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px 14px;display:flex;align-items:center;gap:12px}
+  .n{display:inline-flex;width:26px;height:26px;border-radius:50%;background:#fff;color:#0E1422;font-weight:600;font-size:12px;align-items:center;justify-content:center;flex:none}
+  .t{font-size:17px;font-weight:600}
+  .who{display:flex;align-items:center;gap:10px;margin-left:auto}
+  .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#2454EB,#5C8FFF);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;overflow:hidden;flex:none}
+  .avatar img{width:100%;height:100%;object-fit:cover}
+  .who b{display:block;font-size:12.5px;font-weight:600}.who span{display:block;font-size:10.5px;color:var(--dim)}
+  .kw{display:inline-block;background:linear-gradient(90deg,var(--b1),var(--b2));color:#fff;font-weight:700;font-size:20px;letter-spacing:.08em;padding:8px 18px;border-radius:11px;box-shadow:0 0 22px rgba(76,194,255,.45)}
+  .dm{font-size:11.5px;color:var(--dim);margin-left:10px}
+  .arrow{color:#7FA6FF;font-size:22px}
+  .foot{position:absolute;left:64px;right:64px;bottom:40px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.08);padding-top:22px}
+  .wm{display:flex;align-items:center;gap:10px;font-size:26px;font-weight:600;letter-spacing:-.02em}
+  .wm img{width:34px;height:34px;border-radius:9px;box-shadow:0 0 18px rgba(76,194,255,.4)}
+  .url{font-size:11px;color:#7FA6FF}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="glow g1"></div><div class="glow g2"></div>
+  <div class="corner c1">+</div><div class="corner c2">+</div><div class="corner c3">+</div><div class="corner c4">+</div>
+  <div class="inner">
+    <div class="eyebrow mono"><i></i>Puzzle / Grok Bot delivery team</div>
+    <h1>13 Grok Bot agents that run a process consultancy's <span class="accent">delivery</span>.</h1>
+    <p class="sub">Every call becomes a recap and a changelog entry. Claude Code does the work. The client's Puzzle map is the shared memory.</p>
+
+    <div class="lanes">
+      <div class="lane"><div class="lbl mono"><b>01</b>Leadership</div><div class="cards">
+        <div class="bot lead" data-i="0"><div class="tile">CS</div><div><b>Chief of Staff</b><span>Runs the team, hands the work to Claude Code</span></div></div>
+        <div class="bot lead" data-i="1"><div class="tile">FM</div><div><b>Foreman</b><span>Builds new Bots and skills when needed</span></div></div>
+      </div></div>
+      <div class="lane"><div class="lbl mono"><b>02</b>Coordination</div><div class="cards">
+        <div class="bot coord" data-i="2"><div class="tile">DL</div><div><b>Delivery Lead</b><span>Scope, calendar, gates, the weekly update</span></div></div>
+        <div class="bot coord" data-i="3"><div class="tile">RW</div><div><b>Recap Writer</b><span>Every call becomes an email and a task list</span></div></div>
+        <div class="bot coord" data-i="4"><div class="tile">TR</div><div><b>Trainer</b><span>Deck, Loom scripts, rollout emails</span></div></div>
+      </div></div>
+      <div class="lane"><div class="lbl mono"><b>03</b>Architecture</div><div class="cards">
+        <div class="bot arch" data-i="5"><div class="tile">CM</div><div><b>Current State Mapper</b><span>Interview guide, the map in Puzzle</span></div></div>
+        <div class="bot arch" data-i="6"><div class="tile">TS</div><div><b>Tech Stack Researcher</b><span>Options, pricing, the vet-and-demo prep</span></div></div>
+        <div class="bot arch" data-i="7"><div class="tile">PC</div><div><b>Product Changes Researcher</b><span>Tool releases mapped to client steps</span></div></div>
+        <div class="bot arch" data-i="8"><div class="tile">PA</div><div><b>Process Architect</b><span>Future state map, AI Opportunity Roadmap</span></div></div>
+        <div class="bot arch" data-i="9"><div class="tile">IA</div><div><b>Impact Analyst</b><span>ROI before, Innovation Report after</span></div></div>
+        <div class="bot arch" data-i="10"><div class="tile">BS</div><div><b>Build Specialist</b><span>Build specs, request tracker, test plans</span></div></div>
+        <div class="bot arch opt" data-i="11"><div class="tile">DC</div><div><b>Data Cleaner</b><span>Optional. Migration review and mapping</span></div></div>
+      </div></div>
+      <div class="lane"><div class="lbl mono"><b>04</b>Cross-cutting</div><div class="cards">
+        <div class="bot cross" data-i="12"><div class="tile">CH</div><div><b>Change Manager</b><span>A changelog entry for every decision</span></div></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="bar" id="bar">
+    <h3>Get the full setup file in 2 steps</h3>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><span class="t">Connect with me</span><div class="who"><div class="avatar" id="avatar">BR</div><div><b>Brian Ragone</b><span>Founder, Puzzle</span></div></div></div>
+      <div class="arrow">→</div>
+      <div class="step"><span class="n">2</span><span class="t">Comment</span><span class="kw" style="margin-left:auto">OPSBOT</span><span class="dm">I'll DM you the file</span></div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="wm"><img src="puzzle-logo.png" alt="">puzzle</div>
+    <div class="url mono">puzzleapp.io / github.com/puzzle-app/grokbot-delivery-team</div>
+  </div>
+</div>
+<script>
+  const p=new URLSearchParams(location.search);
+  if(p.has('frame')){
+    const n=parseInt(p.get('frame'),10);
+    document.querySelectorAll('.bot').forEach(el=>{ if(parseInt(el.dataset.i,10)>=n) el.classList.add('hide'); });
+    document.querySelectorAll('.lane').forEach(l=>{ if(![...l.querySelectorAll('.bot')].some(el=>!el.classList.contains('hide'))) l.querySelector('.lbl').style.opacity='0'; });
+    if(p.get('bar')==='0') document.getElementById('bar').classList.add('hide');
+  }
+  if(p.has('avatar')){ document.getElementById('avatar').innerHTML='<img src="'+p.get('avatar')+'" alt="">'; }
+</script>
+</body>
+</html>

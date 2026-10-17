@@ -99,7 +99,8 @@ guides/       The rules, the engagement model, Puzzle and the MCP, Claude Code
 context/      Your consultant profile and client folders; the glossary is the standard
 skills/       The starter skills the Bots hand to Claude Code
 examples/     One synthetic client, start to finish, so you can see finished output
-assets/       The team animation, the org chart, and the engagement map
+assets/       The team animation, the system map, and the engagement map
+assets/linkedin/  The dark version for LinkedIn: still, GIF, and MP4
 setup-prompt.md
 ```
 

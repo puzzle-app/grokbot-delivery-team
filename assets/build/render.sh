@@ -17,7 +17,7 @@ AQ=""
 if [ -n "$AVATAR" ]; then cp "$AVATAR" "$B/avatar.png"; AQ="&avatar=avatar.png"; fi
 
 echo "team @2x"; render team.html 720 900 2 "$ROOT/assets/grokbot-delivery-team@2x.png" "?all=1$AQ"
-echo "org chart @2x"; render org-chart.html 1200 660 2 "$ROOT/assets/org-chart@2x.png"
+echo "org chart @2x"; render org-chart.html 2000 1125 2 "$ROOT/assets/org-chart@2x.png" "?x=1$AQ"
 echo "engagement map @2x"; render engagement-map.html 1600 720 2 "$ROOT/assets/engagement-map@2x.png"
 
 echo "gif frames"
