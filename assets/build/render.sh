@@ -16,7 +16,8 @@ render () { # html, width, height, scale, out, [query]
 AQ=""
 if [ -n "$AVATAR" ]; then cp "$AVATAR" "$B/avatar.png"; AQ="&avatar=avatar.png"; fi
 
-echo "team @2x"; render team.html 720 900 2 "$ROOT/assets/grokbot-delivery-team@2x.png" "?all=1$AQ"
+mkdir -p "$ROOT/assets/linkedin"
+echo "team @2x"; render team.html 720 900 2 "$ROOT/assets/linkedin/grokbot-delivery-team-light@2x.png" "?all=1$AQ"
 echo "org chart @2x"; render org-chart.html 2000 1125 2 "$ROOT/assets/org-chart@2x.png" "?x=1$AQ"
 echo "engagement map @2x"; render engagement-map.html 1600 720 2 "$ROOT/assets/engagement-map@2x.png"
 
@@ -25,7 +26,7 @@ mkdir -p "$B/frames"; rm -f "$B/frames"/*.png
 for i in $(seq 0 13); do render team.html 720 900 1 "$B/frames/team-$(printf %02d $i).png" "?frame=$i&bar=0$AQ"; done
 render team.html 720 900 1 "$B/frames/team-14.png" "?frame=13$AQ"
 
-python3 - "$B/frames" "$ROOT/assets/grokbot-delivery-team.gif" <<'EOF'
+python3 - "$B/frames" "$ROOT/assets/linkedin/grokbot-delivery-team-light.gif" <<'EOF'
 import sys, glob
 from PIL import Image
 frames_dir, out = sys.argv[1], sys.argv[2]

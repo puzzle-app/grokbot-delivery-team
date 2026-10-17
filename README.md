@@ -2,7 +2,7 @@
 
 **13 Grok Bot agents to run a process consultancy. The client's Puzzle map is the shared memory. Claude Code does the work.**
 
-[![The Grok Bot delivery team](assets/grokbot-delivery-team.gif)](assets/grokbot-delivery-team@2x.png)
+[![The Grok Bot delivery team](assets/org-chart@2x.png)](assets/org-chart@2x.png)
 
 I've run process optimization engagements since 2020: current state mapping, future state design, builds, data migration, training, launch support. The delivery system behind them is a spreadsheet of about sixty tasks across seven phases. When I read it honestly, most of those tasks are listening, drafting, mapping, and memorializing. A human has to do five of them. The rest are now Bots.
 
@@ -41,7 +41,6 @@ Nothing is sent or spent during setup. Prefer to do it by hand? Every file in [a
 | [Change Manager](agents/13-change-manager.md) | A changelog entry in the client's workspace for every decision, scope change, and change request | Delivery Lead |
 | [Delivery Room](agents/14-delivery-room.md) | The group chat where the Chief of Staff, the Delivery Lead, and the specialists hand work over | |
 
-![The org chart](assets/org-chart@2x.png)
 
 ## How the work flows
 
@@ -99,8 +98,8 @@ guides/       The rules, the engagement model, Puzzle and the MCP, Claude Code
 context/      Your consultant profile and client folders; the glossary is the standard
 skills/       The starter skills the Bots hand to Claude Code
 examples/     One synthetic client, start to finish, so you can see finished output
-assets/       The team animation, the system map, and the engagement map
-assets/linkedin/  The dark version for LinkedIn: still, GIF, and MP4
+assets/       The system map and the engagement map
+assets/linkedin/  The LinkedIn cards, light and dark, with the animated reveal as GIF and MP4
 setup-prompt.md
 ```
 
