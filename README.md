@@ -96,7 +96,7 @@ Nothing is sent, posted, written to a client system, paid for, or deleted withou
 agents/       One file per Bot, 01 to 14, with the instructions block to paste
 guides/       The rules, the engagement model, Puzzle and the MCP, Claude Code
 context/      Your consultant profile and client folders; the glossary is the standard
-skills/       The starter skills the Bots hand to Claude Code
+skills/       The skills the Bots hand to Claude Code; six are the puzzle-skills set, synced by scripts/
 examples/     One synthetic client, start to finish, so you can see finished output
 assets/       The system map and the engagement map
 assets/linkedin/  The LinkedIn cards, light and dark, with the animated reveal as GIF and MP4

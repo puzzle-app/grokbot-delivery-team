@@ -1,10 +1,9 @@
 ---
-name: "build-puzzle-process"
-description: "Build thorough Puzzle processes via the Puzzle MCP. Load for \"build out this process\", \"map this in Puzzle\", \"document this workflow\", \"create a process for X\", or editing an existing Puzzle process."
+name: build-puzzle-process
+description: Build thorough, well-structured processes in any Puzzle workspace via the Puzzle MCP. Load whenever the user asks to "build out this process", "map this in Puzzle", "document this workflow", "create a process for X", or any time a workflow needs to become a Puzzle section with steps, executors, roles, tools, conditionals, attributes, and notes. Also load when editing or extending an existing Puzzle process. Covers the full discipline: one consolidated intake, one section per process, conditional branch patterns and go-to steps, orientation chosen by shape (LTR timeline, TTB pipeline, hybrid with automation drops), a grid sketch traced for zero crossings, a coded connector grammar with distance classes, lanes, a handle table and a mandatory post-build handle pass, a visual check of the built map, step typing and titling, RACI roles with hourly rates, frequency and time for costing, attributes, tools, triggers, people-to-role mapping, delay steps, and changelog memorialization. When in doubt building anything in Puzzle, use this skill.
 ---
 
-> Adapted for the Grok Bot delivery team from Puzzle's own consulting practice. Read `context/consultant.md` and `context/glossary.md` first. Anything in `{{braces}}` comes from `consultant.md`.
-
+> Shared with [puzzle-skills](https://github.com/puzzle-app/puzzle-skills) v1.0; the delivery team adds this note. Read `context/consultant.md` (map conventions, regulated parts) and `context/glossary.md` first. The delivery team uses two tabs per client workspace: the Current State Mapper builds on Current State, the Process Architect on Future State; confirm the tab with `list_tabs` before anything else. Every future-state Automation or AI Agent step carries the pain point it resolves in its note. Writes to the client's workspace happen only after the consultant's OK on the proposal.
 
 # Build a Puzzle Process
 
@@ -19,7 +18,7 @@ Two rules govern everything else:
 
 ## The build order (do not skip steps)
 
-1. **Orient before you touch anything.** Call `list_tabs` to confirm the tab ID (the delivery team uses two tabs per client workspace: Current State and Future State; the Current State Mapper builds on the first, the Process Architect on the second). Then `list_sections` (with `tab_id` and `include: ['step_count']`) to check for an existing section so you don't duplicate or fragment. If editing an existing process, `list_steps` to capture current step IDs and connection IDs before changing anything.
+1. **Orient before you touch anything.** Call `list_tabs` to confirm the tab ID. Then `list_sections` (with `tab_id` and `include: ['step_count']`) to check for an existing section so you don't duplicate or fragment. If editing an existing process, `list_steps` to capture current step IDs and connection IDs before changing anything.
 2. **Resolve roles, tools, and data up front.** Roles come from `list_teams` with `include: ['roles.id', 'roles.name', 'roles.hourly_rate']`. Tools come from `list_tools` — query a single comma-separated string of every tool name at once (e.g. `"Attio, QuickBooks, Intercom, monday.com, Claude"`) rather than one call per tool. Check `list_entities` and `list_attributes` for the data objects the process touches. This is how you discover what's missing before you ask about it.
 3. **Draft the full process privately.** Work through every step, branch, and input against the Completeness Checklist below. Every gap you find becomes an intake question.
 4. **Run the single intake round.** One consolidated set of questions covering every missing input (see "The single intake round"). Do the research first (e.g. hourly rates, proposed attributes) so most questions are confirm/adjust rather than open-ended.

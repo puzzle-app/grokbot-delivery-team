@@ -1,6 +1,6 @@
 # Quantification of Impact: Northstar Home Services (synthetic)
 
-From the Puzzle workspace on 2026-03-12. Rates: client-supplied. Figures in USD per month unless stated. Projection; measured at the 45-day check-in. Produced by the Impact Analyst with the `quantify-impact` skill for gate 1.
+From the Puzzle workspace on 2026-03-12. Rates: client-supplied. Figures in USD per month unless stated. Projection; measured at the 45-day check-in. Produced by the Impact Analyst with the `cost-a-process` skill for gate 1.
 
 ## Summary
 | | Current state | Future state | Net per month |

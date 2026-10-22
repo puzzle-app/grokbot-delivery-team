@@ -31,7 +31,7 @@ Keep Claude Code logged in on the Mac itself, so your subscription never passes 
 
 ## Skills
 
-The skills in [skills/](../skills/) are discovered by Claude Code through `.claude/skills`, which links to the same folder. Each `SKILL.md` says what it produces, what it needs, and the procedure. Three of them come from Puzzle's own consulting practice (`build-puzzle-process`, `create-changelog-entry`, `recap-support-calls`); the rest were written for this team. The Foreman asks Claude Code to write new ones when a Bot needs a deliverable no skill covers.
+The skills in [skills/](../skills/) are discovered by Claude Code through `.claude/skills`, which links to the same folder. Each `SKILL.md` says what it produces, what it needs, and the procedure. Three of them come from Puzzle's own consulting practice (`build-puzzle-process`, `log-a-decision`, `recap-support-calls`); the rest were written for this team. The Foreman asks Claude Code to write new ones when a Bot needs a deliverable no skill covers.
 
 ## No Claude Code yet?
 

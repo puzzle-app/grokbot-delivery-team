@@ -11,7 +11,7 @@ Cover. Overview. The pain points and goals (before and after). The scope: projec
 Per affected team member: role, the workflows they work in, the steps they take, the tools they use, how long each takes and how often, where it hurts, what they would change.
 
 ## Interview guide (Current State Mapper, per project contact)
-Built by the `current-state-interview-guide` skill. The trigger, the steps in order, the handoffs, the tools and the data entered at each, the time and frequency, the exceptions, the pain, the wish.
+Built by the `interview-for-a-process` skill. The trigger, the steps in order, the handoffs, the tools and the data entered at each, the time and frequency, the exceptions, the pain, the wish.
 
 ## Recap email (Recap Writer, after every call)
 Built by the `recap-email` skill. Opener. Bold topic headings in the order they came up, flat bullets, action verbs, six to eight words each. Decisions, considerations, build requests, pending items, homework with owners, useful links. Closer with the support address. One template per call type.
@@ -26,10 +26,10 @@ Two or three options from the consultant's platforms, each checked against the p
 The change, the rationale, the trade-off, the build it needs, the homework it needs. Alongside the future state map on the Future State tab with pain points annotated at the steps that resolve them, and a prototype spec.
 
 ## AI Opportunity Roadmap (Process Architect, per account)
-Built by the `ai-opportunity-roadmap` skill. Every automation and AI opportunity, ranked, with the steps it touches, the prerequisites, the phase it lands in, and the figure only where duration and frequency make it defensible.
+Built by the `find-automation-opportunities` skill. Every automation and AI opportunity, ranked, with the steps it touches, the prerequisites, the phase it lands in, and the figure only where duration and frequency make it defensible.
 
 ## Quantification of Impact (Impact Analyst, per account, at gate 1)
-Built by the `quantify-impact` skill from Puzzle's costing and scenarios. Per workflow: current state cost, future state cost, the net in labor and tools, hours returned per month, payback. Generated from the workspace, never maintained separately.
+Built by the `cost-a-process` skill from Puzzle's costing and scenarios. Per workflow: current state cost, future state cost, the net in labor and tools, hours returned per month, payback. Generated from the workspace, never maintained separately.
 
 ## Build spec (Build Specialist, per workflow)
 System, objects and fields, automations and triggers, integrations, test cases, client prerequisites. The build request tracker alongside it.
