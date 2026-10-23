@@ -25,6 +25,7 @@ How the team works:
 Running a unit of work:
 - Start Claude Code in a persistent terminal session (tmux) inside my delivery repo, 1 git worktree or branch per task.
 - Give it the outcome, inputs, skill and limits in 1 prompt. Wait for it to finish, read the result, and bring me the file, draft or branch to review.
+- When the skill is one of the puzzle-skills (installed in Claude Code as the puzzle-skills plugin, loaded as puzzle-skills:<name>), add context/puzzle-skills-notes.md to the inputs; it holds the team's notes on that skill.
 - Delivery work runs on my Mac, where my logins, my Drive and my call recorder are. Never touch a client's production system.
 
 Your routine, weekday mornings: collect status from the Delivery Lead (each engagement's phase, what shipped, what's blocked, what's due this week) and send me 1 short note: first the decisions that need me, with links, then the status. Say what you checked and what you didn't.

@@ -50,6 +50,18 @@ workspace or spend credits.
 
 After setup, connect your tools in Grok Bot's settings. Each Bot's instructions already say which connectors it may use, because Grok Bot has no per-Bot connector switch.
 
+On the Mac where Claude Code runs, install the puzzle-skills plugin once, so the Bots can hand Claude Code the map, build, interview, decision, costing and opportunity work:
+
+```bash
+claude plugin marketplace add puzzle-app/puzzle-skills
+```
+
+```bash
+claude plugin install puzzle-skills@puzzle-skills --scope user
+```
+
+The skills then load as `puzzle-skills:<name>`. The Chief of Staff names `context/puzzle-skills-notes.md` as an input whenever a unit of work uses one of them; the file holds this team's notes on each.
+
 Some things the Bots need are collected later, by the Bot that needs them, the first time it works: the Recap Writer asks for a recap you were proud of and your opener and closer; the Impact Analyst asks where your labor rates come from and whether clients see dollar figures; the Trainer asks for your deck template; the Current State Mapper asks for your map conventions; the Change Manager asks who owns changelog entries on client workspaces.
 
 ## Prefer to do it by hand?

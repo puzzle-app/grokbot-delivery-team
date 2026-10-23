@@ -77,6 +77,6 @@ Each has a definition and a before value, or it isn't a metric.
 | Bot | One Grok Bot agent with one job. |
 | Lane | Coordination (the Delivery Lead, Recap Writer, Trainer) or Architecture (the mappers, researchers, architect, analyst, builder, cleaner). |
 | Unit of work | What a Bot hands the Chief of Staff for Claude Code: outcome, inputs, skill, limits. |
-| Skill | A procedure in `skills/` that Claude Code follows to produce one kind of deliverable. |
+| Skill | A procedure Claude Code follows to produce one kind of deliverable: one of the fifteen puzzle-skills from the plugin, or one of the six in `skills/`. |
 | The five human things | Hosting the calls, auditing the client's systems, vetting and demoing tools, configuring the systems, delivering the training. |
 | Drafts only | The default output of every Bot. Nothing goes out without the consultant's yes on that item. |

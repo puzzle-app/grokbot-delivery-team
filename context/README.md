@@ -9,6 +9,7 @@ glossary.md               The terms. Every Bot and skill uses these words and no
 consultant.template.md    The questions the setup asks. Fill it, save as consultant.md.
 consultant.md             You. Ignored by git. Every Bot reads it first.
 deliverables.md           What each deliverable looks like, by phase.
+puzzle-skills-notes.md    This team's notes on the puzzle-skills set, one per skill the Bots use.
 clients/README.md         How a client folder is laid out.
 clients/<client>/         One per engagement. Ignored by git.
 ```

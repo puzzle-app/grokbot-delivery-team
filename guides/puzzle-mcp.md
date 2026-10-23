@@ -47,7 +47,7 @@ The Puzzle MCP exposes the workspace to any agent. The Bots name these in plain 
 | Read the costs | Read duration, frequency and role rates per step; read the cost scenario on an entry |
 | Watch a tool | List the steps that use a tool, across the workspace |
 
-The `build-puzzle-process` skill carries the full procedure for building a map that is complete in one shot: one intake round, a proposed map in chat, one create call, the handle pass, the visual check, and the changelog entry.
+The `build-puzzle-process` skill (from the puzzle-skills plugin) carries the full procedure for building a map that is complete in one shot: one intake round, a proposed map in chat, one create call, the handle pass, the visual check, and the changelog entry.
 
 ## The write rule
 

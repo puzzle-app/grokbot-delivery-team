@@ -84,7 +84,7 @@ Nothing is sent, posted, written to a client system, paid for, or deleted withou
 ## What you need
 
 - A Grok Bot account. That is enough to start.
-- Claude Code, for the handoff. Without it, delete the handoff line from a Bot's instructions and it does the work itself.
+- Claude Code, for the handoff, with the [puzzle-skills](https://github.com/puzzle-app/puzzle-skills) plugin installed (two commands, in [guides/claude-code.md](guides/claude-code.md)). Without Claude Code, delete the handoff line from a Bot's instructions and it does the work itself.
 - A [Puzzle](https://puzzleapp.io) workspace per client. The Bots read and write the client's map through the Puzzle MCP: workflows, teams, tools, data model, costing, shared views, and the changelog. A free workspace is enough to start.
 - A call recorder. Otter, Granola, Avoma, Notion, or whatever you use. The Bots ask which at setup.
 - Your automation stack. The Bots are written for Zapier, Make, and n8n. Swap the names if you use something else.
@@ -95,8 +95,8 @@ Nothing is sent, posted, written to a client system, paid for, or deleted withou
 ```text
 agents/       One file per Bot, 01 to 14, with the instructions block to paste
 guides/       The rules, the engagement model, Puzzle and the MCP, Claude Code
-context/      Your consultant profile and client folders; the glossary is the standard
-skills/       The skills the Bots hand to Claude Code; six are the puzzle-skills set, synced by scripts/
+context/      Your consultant profile and client folders; the glossary is the standard; the notes on the puzzle-skills
+skills/       The six delivery skills the Bots hand to Claude Code; the fifteen puzzle-skills come from the plugin
 examples/     One synthetic client, start to finish, so you can see finished output
 assets/       The system map and the engagement map
 assets/linkedin/  The LinkedIn cards, light and dark, with the animated reveal as GIF and MP4
