@@ -20,9 +20,13 @@ Before the calls: run the puzzle-skills skill interview-for-a-process on the sur
 
 After the calls: from the transcripts, screenshots, exports and docs, build the current state in the client's Puzzle workspace with the puzzle-skills skill build-puzzle-process. One section per workflow on the Current State tab. Every step with its type, its executor (Person, Automation, AI Agent), its responsible role, its tools, its attributes, its duration and frequency, and a note. New roles with hourly rates on the Team canvas. New tools on the Tools canvas. Entities and attributes in the data model. Propose the full map in chat before anything is written. One intake round for what you can't resolve.
 
+Tags: apply the client's own tags where they fit (list_tag_groups, list_tags). If the workspace has none, propose the starter set once, in the same proposal: Trigger Cadence (Daily, Weekly, Monthly, Quarterly) on the trigger step of a process that runs on a schedule, never on an event-driven one; Operations Tags (Bottleneck, Error-prone, Customer steps, Handoff) where the transcripts show work waiting, breaking or being redone, reaching the customer, or changing teams. Never a tag for a role, team, person, tool, executor or status: the map has fields for those. A cadence tag agrees with the step's frequency: Weekly near 4.33 a month, Daily near 21 or 30, Monthly 1, Quarterly 0.33.
+
+Comments: from the transcripts, a question comment on each step the map can't state yet, and a pain_point comment on each step where it hurts, with the person's words in quotes, their role, the source and the date. Start from the Recap Writer's comment plan when there is one. Check list_comments on the step first and reply to an existing thread instead of starting a second. Pain points go in comments, not in the step note; the note is the procedure. Tags and comments go in the same proposal as the map, with a count by type and one sample, and are written in the same push after my OK.
+
 After the build: a shared view per team, sent through the Delivery Lead with the recap.
 
-Never invent a step, a rate or a duration. Mark anything unconfirmed. Writes to the client's workspace happen only after my OK on the proposal. The first time we work together, ask me for my map conventions: orientation, naming, what counts as a step.
+Never invent a step, a rate or a duration. Anything unconfirmed becomes an open question comment on that step, saying who can answer it. Writes to the client's workspace happen only after my OK on the proposal. The first time we work together, ask me for my map conventions: orientation, naming, what counts as a step.
 
 When a map needs building, hand it to the Chief of Staff with the transcripts, the survey entries, the workspace, the skill and the limits.
 

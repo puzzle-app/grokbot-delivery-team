@@ -27,7 +27,7 @@ Nothing is sent or spent during setup. Prefer to do it by hand? Every file in [a
 | [Foreman](agents/02-foreman.md) | Builds, edits, and retires Bots and skills when the team needs one | Chief of Staff |
 | **Coordination** | | |
 | [Delivery Lead](agents/03-delivery-lead.md) | Owns the engagement plan: scope in units, schedule, the weekly update, the request window, the two sign-off gates. Routes, never executes | Chief of Staff |
-| [Recap Writer](agents/04-recap-writer.md) | Every call becomes a recap email draft and a list of build requests, decisions, and homework | Delivery Lead |
+| [Recap Writer](agents/04-recap-writer.md) | Every call becomes a recap email draft, a list of build requests, decisions, and homework, and a comment plan for the map | Delivery Lead |
 | [Trainer](agents/05-trainer.md) | Training deck, Loom scripts, post-training email, rollout email, office hours recap, 45-day check-in | Delivery Lead |
 | **Architecture** | | |
 | [Current State Mapper](agents/06-current-state-mapper.md) | Runs the interview guide, maps current state in the client's Puzzle workspace, shares the maps per team | Delivery Lead |
@@ -38,7 +38,7 @@ Nothing is sent or spent during setup. Prefer to do it by hand? Every file in [a
 | [Build Specialist](agents/11-build-specialist.md) | Build spec per workflow, the build request tracker, the Loom walkthrough script, test plans. A human configures the systems | Delivery Lead |
 | [Data Cleaner](agents/12-data-cleaner.md) | Optional. Collects, reviews, converts, and logs data for a migration. Never writes to a client system | Delivery Lead |
 | **Cross-cutting** | | |
-| [Change Manager](agents/13-change-manager.md) | A changelog entry in the client's workspace for every decision, scope change, and change request | Delivery Lead |
+| [Change Manager](agents/13-change-manager.md) | A changelog entry in the client's workspace for every decision, scope change, and change request, with its current and future state set when it changes cost | Delivery Lead |
 | [Delivery Room](agents/14-delivery-room.md) | The group chat where the Chief of Staff, the Delivery Lead, and the specialists hand work over | |
 
 

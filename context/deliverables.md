@@ -29,7 +29,7 @@ The change, the rationale, the trade-off, the build it needs, the homework it ne
 Built by the `find-automation-opportunities` skill. Every automation and AI opportunity, ranked, with the steps it touches, the prerequisites, the phase it lands in, and the figure only where duration and frequency make it defensible.
 
 ## Quantification of Impact (Impact Analyst, per account, at gate 1)
-Built by the `cost-a-process` skill from Puzzle's costing and scenarios. Per workflow: current state cost, future state cost, the net in labor and tools, hours returned per month, payback. Generated from the workspace, never maintained separately.
+Built by the `cost-a-process` skill from Puzzle's costing and the changelog's cost analysis. Per workflow: current state cost, future state cost, the net in labor and tools, hours returned per month, payback. Generated from the workspace, never maintained separately.
 
 ## Build spec (Build Specialist, per workflow)
 System, objects and fields, automations and triggers, integrations, test cases, client prerequisites. The build request tracker alongside it.

@@ -27,8 +27,10 @@ The standard vocabulary. Every Bot, every skill and every deliverable uses these
 | Entity, attribute | A data object in a tool and its fields, on the Data Model canvas. A step reads or writes attributes. |
 | Duration, frequency | Minutes per run and runs per month on a Person step. The costing inputs. |
 | Process costing | Duration times frequency times the role's hourly rate per step, plus the allocated tool cost, rolled up per section. |
-| Cost scenario | The Cost tab on a changelog entry: current state and future state side by side, with the net. One scenario per entry. |
+| Cost analysis | On a changelog entry: the sections or tabs named as its current state and future state, rolled up per side into labor cost, tool cost, total and hours, monthly and annual, with the net (future minus current; negative is a saving). Steps that won't run are excluded from the future side by status or tag. Optimizer plan. One scenario per entry. |
 | Changelog entry | A record in the workspace of a decision, with an owner, a status (idea, planned, in progress, completed), the rationale, and links to the steps and tools it touches. |
+| Comment | A thread on a step or section with a type: question (unconfirmed, to ask the client), pain_point (where it hurts, in the person's words), idea (an improvement to consider), decision (a pointer to a changelog entry), note. Resolved when answered, fixed or dropped. |
+| Step tag | A workspace-wide label on steps, in a group, for what the map has no field for. The starter set: Trigger Cadence (Daily, Weekly, Monthly, Quarterly) and Operations Tags (Bottleneck, Error-prone, Customer steps, Handoff). Never a role, person, tool, executor or status. |
 | Shared view | A public, curated subset of the workspace, sent to a team. |
 | Vendor record | The consultant on the client's People canvas, so entries have an owner. |
 
@@ -52,7 +54,7 @@ The standard vocabulary. Every Bot, every skill and every deliverable uses these
 | Future state recommendation | Per workflow: the change, the rationale, the trade-off, the build, the homework. |
 | Prototype | What gets built in the recommended system to show at the Propose Future State call. |
 | AI Opportunity Roadmap | Every automation and AI opportunity ranked, with prerequisites and the phase it lands in. |
-| Quantification of Impact | Current state cost, future state cost, and the difference, from Puzzle's costing and scenarios, at gate 1. |
+| Quantification of Impact | Current state cost, future state cost, and the difference, from Puzzle's costing and the changelog's cost analysis, at gate 1. |
 | Innovation Report | After the demo: what was introduced and what was resolved, by department or by tool. |
 | Build spec | Per workflow: system, objects and fields, automations and triggers, integrations, test cases, client prerequisites. |
 
