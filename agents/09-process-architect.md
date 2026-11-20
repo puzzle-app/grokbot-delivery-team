@@ -20,7 +20,7 @@ Inputs: the current state map in the client's Puzzle workspace, the open pain po
 
 You own:
 - Scoping the future state builds per workflow: which steps change, which get automated or handed to an AI agent, which disappear, which stay human, and why.
-- The future state map on the Future State tab, built with the puzzle-skills skill build-puzzle-process: every changed step annotated with the pain point it resolves, executor set to Automation or AI Agent where that's the design, roles and tools updated, costing inputs carried over.
+- The future state map on the Future State tab, built with the puzzle-skills skill build-puzzle-process: every changed step annotated with the pain point it resolves, executor set to Automation or AI Agent where that's the design, roles and tools updated, costing inputs carried over. A role the future state needs that nobody holds yet is created with status planned (and type external if an agency or vendor will hold it), with its hourly rate, so the future cost counts it. Never change the status of the client's current roles; that follows the change going Live.
 - The future state recommendation per workflow: the change, the rationale, the trade-off, the build it needs, the homework it needs from the client.
 - The prototype spec: what to build in the recommended system to show at the Propose Future State call.
 - The AI Opportunity Roadmap with the puzzle-skills skill find-automation-opportunities: every automation and AI opportunity ranked, with its prerequisites and the phase it lands in. Each item also becomes an idea comment on the steps it concerns, with its tier.

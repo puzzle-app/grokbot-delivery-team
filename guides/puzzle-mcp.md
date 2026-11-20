@@ -11,7 +11,7 @@ Four connected canvases, and everything links to everything that touches it.
 | Canvas | What it holds | Who fills it |
 |---|---|---|
 | Workflow | Tabs for Current State and Future State. One section per workflow. Steps with a type, a status, an executor (Person, Automation, AI Agent), the responsible role, the tools, the attributes read or written, the duration and frequency, a note, tags, and comment threads | Current State Mapper, Process Architect, Build Specialist (status) |
-| Team | Teams, roles with hourly rates, and the people in them | Current State Mapper |
+| Team and People | Teams; roles with hourly rates, a status (draft, planned, hiring, filled, archived) and a type (internal, external); the people in them, with Details (Active or Inactive, phone, location, time zone, start and end date) | Current State Mapper, Process Architect (roles the future state needs) |
 | Tools | Every system in the operation and what it costs | Current State Mapper, Tech Stack Researcher (proposals) |
 | Data Model | Entities and attributes per tool, and how they relate | Current State Mapper, Data Cleaner (mapping) |
 
@@ -22,7 +22,9 @@ On top of the canvases:
 - **Tags.** Tag groups on steps, for what the map has no field for: the trigger cadence, where work waits or breaks, customer steps, handoffs. Never a role, team, person, tool, executor or status.
 - **Comments.** Threads on a step or a section, each with a type (question, idea, pain_point, decision, note) and a resolved flag. Open questions are the client's homework; open pain points feed the future state (the client gives the proposed solution in the thread, the delivery team resolves it once that solution is Live); a decision comment points to its changelog entry.
 - **The changelog.** Entries with a status (idea, planned, in progress, completed), an owner from the People canvas, the rationale, and links to the steps and tools they touch. The Change Manager's record, and the source of the Innovation Report.
-- **Shared views.** A public, curated subset of the workspace. How maps reach a team without giving everyone the whole operation.
+- **Tasks.** Checklist items on a step or section, outstanding or completed. The team's to-dos on the map: what a build still needs. Not the client's homework, which stays in question comments.
+- **Tab folders.** Folders in each canvas's sidebar that group its tabs. A client who organises tabs into folders keeps them; new tabs go in the folder they belong to.
+- **Shared views.** A public, curated subset of the workspace, open to anyone with the link. How maps reach a team without giving everyone the whole operation.
 
 ## Conventions the Bots assume
 
@@ -52,6 +54,9 @@ The Puzzle MCP exposes the workspace to any agent. The Bots name these in plain 
 | Comment on the map | Post a question, pain point, idea, decision or note on a step or section, reply in its thread, resolve it |
 | Read the comments | List comments by step, section, type or resolved flag: the open questions, the open pain points |
 | Watch a tool | List the steps that use a tool, across the workspace |
+| Staff the map | Set each role's status and type, and each person's Details; list the open seats (planned, hiring) and who has left (inactive) |
+| Track the build | Put the build's to-dos on its steps as tasks, mark them done as the build lands |
+| Organise the tabs | List, create and rename sidebar folders, and put tabs in them |
 
 The `build-puzzle-process` skill (from the puzzle-skills plugin) carries the full procedure for building a map that is complete in one shot: one intake round, a proposed map in chat, one create call, the handle pass, the visual check, and the changelog entry.
 
@@ -73,14 +78,36 @@ The tools behind the three newer rows above.
 
 **The changelog's current state, future state and cost analysis** (Optimizer plan).
 
-- `create_changelog_entries` has no state fields. Set them right after with `update_changelog_entries`: `add_current_state_section_ids` or `add_current_state_tab_ids`, `add_future_state_section_ids` or `add_future_state_tab_ids`. A section or tab can't sit on both sides.
-- `future_state_exclude` {statuses, tag_ids} leaves steps out of the future side. It replaces the whole filter. Exclude by status first (Archived, Draft); use a tag only for a scope cut.
+- `create_changelog_entries` takes no sources. Set them right after with `update_changelog_entries`: `add_current_state_section_ids` or `add_current_state_tab_ids`, `add_future_state_section_ids` or `add_future_state_tab_ids`.
+- `future_state_exclude` and `current_state_exclude`, each {statuses, tag_ids}, leave steps out of that side (both can also go on the create call). Each replaces its whole filter. Exclude by status first (Archived, Draft); use a tag only for a scope cut.
+- A section or tab can sit on both sides only while the two filters differ: the same tab as the future side whole, and as the current side without its proposed Draft steps. With separate Current State and Future State tabs, the current side needs no filter.
 - `list_changelog_entries` with `current_state`, `future_state` and `cost_analysis`: labor, tool, total and hours, monthly and annual, per side, and the net (negative is a saving). `has_current` and `has_future` say whether each side is set. A zero total on a side that has steps means missing inputs, not a free process.
 - The entry's title is the body's first H1. Keep the heading text on the same line as the `#`, or the entry reads "Untitled".
 
+## Roles, people, tasks and tab folders
+
+The tools behind the three newest rows above.
+
+**Roles and people.**
+
+- `create_org_structure` and `update_org` take a role's `status` and `type`. Status is one of five: `draft` (the default, not reviewed), `planned` (decided, nobody in it yet), `hiring`, `filled` (someone holds it), `archived`. The old values `future` and `open` are refused; use `planned`. Type is `internal` (default) or `external`, for a seat an agency, contractor or vendor holds. `list_roles` filters by both and returns them with `include: ["status", "type"]`. Roles that existed before status did were set to `filled` if someone held them and `draft` if not.
+- `create_people` and `update_people` take `active` (true Active, false Inactive), `phone`, `location`, `time_zone` (an IANA name such as `America/Chicago`), `start_date` and `end_date` (`YYYY-MM-DD`). Pass `""` or `null` to clear one. `list_people` filters by `active` and returns the fields when included.
+- Someone who has left: `active: false` with an `end_date`, out of their roles with `remove_role_ids`, and each of those roles set to `hiring` or `planned`. Never deleted.
+
+**Tasks.**
+
+- `create_tasks` with `name` and a `step_id` or `section_id`; `update_tasks` with `completed: true` to mark one done (or false to reopen), or a new `step_id` or `section_id` to move it; `list_tasks` with `completed: false` for what is outstanding.
+
+**Tab folders.**
+
+- `list_tabs` with `include_folders: true` returns the folders as rows with `type: "folder"`; tabs carry `folder_id` (null at the top level) and `position`.
+- `create_tab` and `update_tab` take `folder_id` (a folder on the same canvas, or null for the top level) and `position`. `create_tab_folder` and `update_tab_folder` create, rename and reorder folders. Removing a folder moves its tabs to the top level, and no Bot deletes, so that one is the client's to do in the app.
+
+**Subflows.** `update_workflow` and `create_process` take `target_section_id: null` to clear the section a subflow step runs, when that section is gone and its replacement isn't built yet.
+
 ## The write rule
 
-Every Bot reads. Four write, and only after you approve the proposal in chat: the Current State Mapper (current state, tags, question and pain point comments), the Process Architect (future state, idea comments and replies on pain points), the Build Specialist (step status, question comments on build blockers), the Change Manager (changelog, decision comments). Nothing else writes. No Bot deletes.
+Every Bot reads. Four write, and only after you approve the proposal in chat: the Current State Mapper (current state, roles with status and type, people with their Details, tags, question and pain point comments), the Process Architect (future state, planned roles it needs, idea comments and replies on pain points), the Build Specialist (step status, build tasks, question comments on build blockers), the Change Manager (changelog with both state filters, decision comments). Nothing else writes. No Bot deletes.
 
 ## If you don't use Puzzle yet
 
